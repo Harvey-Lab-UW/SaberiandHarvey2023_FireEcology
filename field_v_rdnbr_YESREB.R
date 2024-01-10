@@ -1,7 +1,7 @@
 ## TRIM DATA TO 95TH PERCENTILE OF RDNBR ##quantile(data$RDNBR, c(0.025,0.975))
 ##95 PERCENT OF THE DATA LIES BETWEEN  -269 and 1747.44 ##data1 = data[data$RDNBR >= -269.14 & data$RDNBR <= 1474.44,] ##write.csv(data1,"C:/Users/sabaj/OneDrive/Desktop/manuscript_2/data_ms2_trim.csv")
 library(gamlss)
-respdata= read.csv("C:/Users/sabaj/OneDrive/Desktop/manuscript_2/data_ms2_trim.csv")
+respdata= read.csv("C:/Users/sabaj/OneDrive/Desktop/manuscript_2/FECO23_DATA.csv")
 respdata= na.omit(respdata)
 respdata$prop_deepchar = respdata$meandeepchar/3
 respdata$prop_needle = respdata$needle/7
@@ -17,6 +17,7 @@ char.ht = gamlss(prop_meancharht ~ RDNBR*reburn,nu.formula=~RDNBR*reburn, tau.fo
 deepchar =gamlss(prop_deepchar ~ RDNBR*reburn,nu.formula=~RDNBR*reburn, tau.formula=~RDNBR*reburn, data=respdata,family=BEINF)
 surfchar = gamlss(prop_surfcharmean ~ RDNBR*reburn,nu.formula=~RDNBR*reburn, tau.formula=~RDNBR*reburn, data=respdata,family=BEINF)
 ####-------------------------------------------------------------------------------------------------------------
+### here I create predictions for just surface char model, but this can be repeated for any of the above models.
 pred <- predictAll(surfchar, data=respdata, type="response")
 # create duplicate/dummy dataframe to hold bootstrapping simulations
 new_data <- respdata
@@ -65,9 +66,7 @@ head(summ_CI)
 write.csv(summ_CI,
 "C:/Users/sabaj/OneDrive/Desktop/manuscript_2/reburns/GEE_composite/SurfCharvRDNBR.csv")
 
-
-
-###------------------- how to get AUCS-------------------------------------------------------------------------------
+###------------------- how to get AUCS for each model, -------------------------------------------------------------------------------
 library(pROC)
 ###dichotomize the response variable at thresholds CANOPY COVER LOSS-------------------------------------------
 respdata$dic.C1<-ifelse(respdata$propCBI> 0.05, 1, 0)
@@ -196,7 +195,6 @@ respdata$dic.SU4<-ifelse(respdata$prop_surfcharmean > 0.725, 1, 0)
 respdata$dic.SU5<-ifelse(respdata$prop_surfcharmean > 0.95, 1, 0)
 
 prob.su <- predict(surfchar, data=respdata, type="response")
-
 SU.th05<-roc(respdata$dic.SU1, prob.su);SU.th05
 SU.th3<-roc(respdata$dic.SU2, prob.su);SU.th3
 SU.th5<-roc(respdata$dic.SU3, prob.su);SU.th5
