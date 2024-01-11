@@ -7,8 +7,8 @@ This information is licensed under a Creative Commons Attribution 4.0 Internatio
 
 #This file contains metadata associated with each plot. The following columns are included:
 
-#PlotID: unique plot identifier
-#Reburn: identifier if plot is reburn or not (YES/NO)
+PlotID: unique plot identifier  
+Reburn: identifier if plot is reburn or not (YES/NO)  
 #Reb_Type: identifier of type of reburn with 3 levels: non reburn, SR (stand replacing first fire), or non SR (non stand replacing first fire) 
 #EW_Cascades: identifier if plot is located East or West of Cascade Range
 #needle: mean dead needle index values per plot between 1 and 7
