@@ -9,20 +9,20 @@ This information is licensed under a Creative Commons Attribution 4.0 Internatio
 
 PlotID: unique plot identifier  
 Reburn: identifier if plot is reburn or not (YES/NO)  
-#Reb_Type: identifier of type of reburn with 3 levels: non reburn, SR (stand replacing first fire), or non SR (non stand replacing first fire) 
-#EW_Cascades: identifier if plot is located East or West of Cascade Range
-#needle: mean dead needle index values per plot between 1 and 7
-#prop_kBA: killed basal area per plot as a proportion between 0 and 1
-#prop_kSTEM: killed stems per plot as a proportion between 0 and 1
-#prop_meanbolescorch: mean killed bole scorch per plot as a proportion between 0 and 1
-#prop_meancharht: mean char height per plot as a proportion between 0 and 1
-#prop_surfcharmean: mean surface char per plot as a proportion between 0 and 1
-#mean_deepchar: mean deep char index value per plot between 0 and 2
-#PlotCBI_mean: mean total plot CBI value between 0 and 3
-#Prop_lccloss: mean live canopy cover loss as a proportion between 0 and 1
-#RBR: relativized burn ratio value as calculated with Google Earth Engine code 
-#DNBR: differenced normalized burn ratio value as calculated with Google Earth Engine code
-#RDNBR: relative differenced normalized burn ratio value as calculated with Google Earth Engine code
+Reb_Type: identifier of type of reburn with 3 levels: non reburn, SR (stand replacing first fire), or non SR (non stand replacing first fire)  
+EW_Cascades: identifier if plot is located East or West of Cascade Range  
+needle: mean dead needle index values per plot between 1 and 7  
+prop_kBA: killed basal area per plot as a proportion between 0 and 1  
+prop_kSTEM: killed stems per plot as a proportion between 0 and 1  
+prop_meanbolescorch: mean killed bole scorch per plot as a proportion between 0 and 1  
+prop_meancharht: mean char height per plot as a proportion between 0 and 1  
+prop_surfcharmean: mean surface char per plot as a proportion between 0 and 1  
+mean_deepchar: mean deep char index value per plot between 0 and 2  
+PlotCBI_mean: mean total plot CBI value between 0 and 3  
+Prop_lccloss: mean live canopy cover loss as a proportion between 0 and 1  
+RBR: relativized burn ratio value as calculated with Google Earth Engine code   
+DNBR: differenced normalized burn ratio value as calculated with Google Earth Engine code  
+RDNBR: relative differenced normalized burn ratio value as calculated with Google Earth Engine code  
 
 
 
